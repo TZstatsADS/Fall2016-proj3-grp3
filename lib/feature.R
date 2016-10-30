@@ -1,7 +1,7 @@
 feature <- function(img_dir,data_name=NULL){
   library("EBImage")
   
-  n_files <- length(list.files(img_dir))
+  n_files <- length(list.files(img_dir))-1
   
   dat<-read.csv("C:/Users/YounHyuk/Desktop/Project3_poodleKFC_train/sift_features.csv",header=TRUE)
   dat<-t(dat)
