@@ -3,7 +3,7 @@ features=read.csv("~/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/sift_fea
 labels=read.table("~/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/label.txt")
 features=t(features)
 #dim(features)
-
+load("~/Fall 2016/GR5243/Project3/color_feature.RData")
 
 ################################ supporting funciton   ########################################
 #k=5
@@ -44,10 +44,12 @@ cross_validation=function(features,labels,k,p){
 ####################################### generating model ####################################
 gen_model=function(features,labels){
   k=5
-  p=c(0.0001,0.001,0.01,0.1,1)
+  p=c(0.0001,0.001,0.01)
   acc=vector()
+  j=1
   for (i in p){
-    acc[i]=cross_validation(features,labels,k,i)
+    acc[j]=cross_validation(features,labels,k,i)
+    j=j+1
   }
   ind=which.min(acc)
   final.p=acc[ind]
@@ -59,7 +61,5 @@ gen_model=function(features,labels){
 
 ##################################### Predict Part ###########################################
 
-#testdata=read
-#fm=gen_model(features,labels)
-#r=predict(fm,testdata)
+model=gen_model(features,labels)
 
