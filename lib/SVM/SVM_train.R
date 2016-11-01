@@ -59,9 +59,11 @@ gen_model=function(features,labels){
   ind=which.min(acc)
   print(acc[ind])
   final.p=p[ind]
+  print(final.p)
   dat=data.frame(x=features,y=as.factor(as.matrix(labels)))
   temp=dat[,-dim(dat)[2]]
   ind3=which(colSums(temp)==0)
+  print(ind3)
   dat=dat[,-c(ind3)]
   colnames(dat)=c(1:(dim(dat)[2]-1),'y')
   model=svm(y~.,data=dat,kernel="linear",cost=final.p,scale = T)
