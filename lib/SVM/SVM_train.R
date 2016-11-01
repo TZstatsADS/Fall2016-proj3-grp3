@@ -1,3 +1,4 @@
+library(e1071)
 features=read.csv("~/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/sift_features.csv",header=T)
 labels=read.table("~/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/label.txt")
 features=t(features)
