@@ -7,13 +7,13 @@ from keras.layers import Convolution2D, MaxPooling2D, ZeroPadding2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 
 # path to the model weights file.
-weights_path = '/Users/mac/Fall 2016/GR5243/Project3/vgg16_weights.h5'
+weights_path = '/Users/mac/Fall 2016/GR5243/Project3/vgg16_weights.h5' #Use your path
 top_model_weights_path = 'bottleneck_fc_model.h5'
 # dimensions of our images.
 img_width, img_height = 150, 150
 
-train_data_dir = '/Users/mac/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/data/train'
-validation_data_dir = '/Users/mac/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/data/validation'
+train_data_dir = '/Users/mac/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/data/train' #Use your path
+validation_data_dir = '/Users/mac/Fall 2016/GR5243/Project3/Project3_poodleKFC_train/data/validation' #Use your path
 nb_train_samples = 1600
 nb_validation_samples = 400
 nb_epoch = 50
