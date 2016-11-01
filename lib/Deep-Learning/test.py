@@ -15,4 +15,4 @@ model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accurac
 
 model.load_weights('bottleneck_fc_model.h5')
 test_data=np.load(open('bottleneck_features_test.npy','rb'))
-model.predict_classes(test_data)
+r=model.predict_classes(test_data)
