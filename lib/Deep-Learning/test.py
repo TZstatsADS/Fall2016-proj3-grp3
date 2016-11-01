@@ -14,5 +14,5 @@ model.add(Dense(1, activation='sigmoid'))
 model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accuracy'])
 
 model.load_weights('bottleneck_fc_model.h5')
-test_data=np.load(open('bottleneck_features_validation.npy','rb'))
+test_data=np.load(open('bottleneck_features_test.npy','rb'))
 model.predict_classes(test_data)
