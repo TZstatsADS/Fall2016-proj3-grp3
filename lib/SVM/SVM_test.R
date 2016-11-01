@@ -1,3 +1,3 @@
 #testdata
-fm=gen_model(features,labels)
-r=predict(fm,testdata)
+model=gen_model(features,labels)
+r=predict(model,testdata)
