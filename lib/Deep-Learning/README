@@ -8,3 +8,7 @@ http://deeplearning.net/software/theano/install.html
 
 Please get the weights file here:
 https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3
+
+Use initial_model to create the model.
+Use test_feature_extractor to extract the features from the test set.Need to set your own path to the test dataset.
+Use test to predict the labels.
