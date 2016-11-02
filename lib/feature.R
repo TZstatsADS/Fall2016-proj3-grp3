@@ -39,9 +39,9 @@ feature <- function(img_dir){
     rgb_feature <- as.numeric(freq_rgb$Freq)/(ncol(mat)*nrow(mat))
     
     color_data[i,]<-rgb_feature
+}
     save(color_data,file="./output/color_feature.RData")
 
-  }
   
   dat<-cbind(dat1,color_data)
   save(dat,file="./output/combined_feature.RData")
