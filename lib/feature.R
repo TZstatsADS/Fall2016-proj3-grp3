@@ -1,4 +1,4 @@
-feature <- function(img_dir,data_name=NULL){
+feature <- function(img_dir){
   
   library("EBImage")
   dir_images<-"./data/images"
@@ -17,8 +17,9 @@ feature <- function(img_dir,data_name=NULL){
   dat1<-read.csv("C:/Users/YounHyuk/Desktop/Project3_poodleKFC_train/data/sift_features.csv",header=TRUE)
   dat1<-t(dat1)
   write(dat_lables,file="./data/label.txt",ncol=1)
-  
-##color feature
+  save(dat1,file="./output/sift_feature.RData")
+
+  ##color feature
   nR<-10
   nG<-8
   nB<-10
@@ -38,17 +39,12 @@ feature <- function(img_dir,data_name=NULL){
     rgb_feature <- as.numeric(freq_rgb$Freq)/(ncol(mat)*nrow(mat))
     
     color_data[i,]<-rgb_feature
-    
+    save(color_data,file="./output/color_feature.RData")
+
   }
   
   dat<-cbind(dat1,color_data)
-  
-  if(!is.null(data_name)){
-    save(dat1, file=paste0("./output/feature_", data_name, ".RData"))
-  }
-  return(dat1) #return color_data for color feature and dat for combined
-
-  
+  save(dat,file="./output/combined_feature.RData")
   }
 
 
